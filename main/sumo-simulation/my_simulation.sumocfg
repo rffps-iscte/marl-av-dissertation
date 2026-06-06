@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="my_grid5x5.net.xml"/>
+        <route-files value="my_routes_dev.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="10000"/>
+        <step-length value="1.0"/>
+        <seed value="42"/>
+    </time>
+    <processing>
+        <time-to-teleport value="60"/>
+        <default.action-step-length value="1.0"/>
+        <no-step-log value="true"/>
+    </processing>
+    <report>
+        <verbose value="false"/>
+    </report>
+</configuration>

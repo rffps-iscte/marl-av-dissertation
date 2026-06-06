@@ -1,0 +1,44 @@
+<routes>
+  <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="13.9" tau="1.0"/>
+
+  <!-- ===================================================================
+       DENSE SCENARIO - replaces my_routes_dev.rou.xml
+
+       12 flows x 20 vehicles = 240 vehicles, injected over 0-400 s.
+       All trajectories cross the central 3x3 block (B/C/D x rows 1/2/3),
+       so the centre congests and routing decisions matter.
+
+       Smoke-test at number=15 gave speed_norm ~0.86 (target band 0.55-0.80,
+       so traffic was still a touch too light) -> raised to 20.
+
+       DENSITY KNOB: change every number="20" below (all 12 flows).
+         number=10 -> 120 veh, fast, development iteration only
+         number=15 -> 180 veh, gave speed_norm ~0.86 (too light)
+         number=20 -> 240 veh, current setting
+         number=25 -> 300 veh, if the centre is still too free-flowing
+       After episode 1, read speed_norm in the end-of-episode print:
+         > 0.85          -> too light  -> raise number
+         0.55 - 0.80     -> good target band
+         < 0.40 / many teleports -> too heavy -> lower number
+       =================================================================== -->
+
+  <!-- West -> East, through rows 1/2/3 -->
+  <flow id="wer1" begin="0" end="400" number="20" from="A1B1" to="D1E1"/>
+  <flow id="wer2" begin="0" end="400" number="20" from="A2B2" to="D2E2"/>
+  <flow id="wer3" begin="0" end="400" number="20" from="A3B3" to="D3E3"/>
+
+  <!-- East -> West, through rows 1/2/3 -->
+  <flow id="ewr1" begin="0" end="400" number="20" from="E1D1" to="B1A1"/>
+  <flow id="ewr2" begin="0" end="400" number="20" from="E2D2" to="B2A2"/>
+  <flow id="ewr3" begin="0" end="400" number="20" from="E3D3" to="B3A3"/>
+
+  <!-- South -> North, through columns B/C/D -->
+  <flow id="snb"  begin="0" end="400" number="20" from="B0B1" to="B3B4"/>
+  <flow id="snc"  begin="0" end="400" number="20" from="C0C1" to="C3C4"/>
+  <flow id="snd"  begin="0" end="400" number="20" from="D0D1" to="D3D4"/>
+
+  <!-- North -> South, through columns B/C/D -->
+  <flow id="nsb"  begin="0" end="400" number="20" from="B4B3" to="B1B0"/>
+  <flow id="nsc"  begin="0" end="400" number="20" from="C4C3" to="C1C0"/>
+  <flow id="nsd"  begin="0" end="400" number="20" from="D4D3" to="D1D0"/>
+</routes>

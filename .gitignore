@@ -1,0 +1,9 @@
+@"
+venv/
+__pycache__/
+*.pyc
+runs/
+results/
+*.log
+*.npy
+"@ | Out-File -FilePath .gitignore -Encoding utf8

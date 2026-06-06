@@ -1,0 +1,12 @@
+<routes>
+  <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="13.9" tau="1.0"/>
+  <!-- Rebalanced flows: all trajectories 5-6 edges (~60-110s) to avoid the
+       short/long disparity that biased training toward short routes.
+       Directions kept diverse: E<->W, S<->N, and two diagonal-ish cross flows. -->
+  <flow id="wave0" begin="0"   end="200" number="10" from="E3E2" to="B2B1"/>
+  <flow id="wave1" begin="0"   end="200" number="10" from="A1A2" to="D2D3"/>
+  <flow id="wave2" begin="100" end="300" number="10" from="C0C1" to="C4C3"/>
+  <flow id="wave3" begin="100" end="300" number="10" from="C4C3" to="C0C1"/>
+  <flow id="wave4" begin="200" end="400" number="10" from="B4C4" to="D1C1"/>
+  <flow id="wave5" begin="200" end="400" number="10" from="D0C0" to="B3B4"/>
+</routes>
