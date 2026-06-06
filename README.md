@@ -2,8 +2,8 @@
 
 Implementação e comparação de dois algoritmos de Multi-Agent Reinforcement Learning (MARL) sob o paradigma CTDE (Centralised Training, Decentralised Execution) para routing cooperativo de veículos autónomos numa rede urbana simulada em SUMO:
 
-- **MAPPO** — Multi-Agent PPO (policy-gradient com critic centralizado)
-- **QMIX** — value-based com mixing network monotónica
+- **MAPPO** - Multi-Agent PPO (policy-gradient com critic centralizado)
+- **QMIX** - value-based com mixing network monotónica
 
 Ambos partilham o mesmo ambiente (`environment.py`), o mesmo cenário de tráfego e a mesma função de recompensa, para que a comparação seja justa.
 
@@ -176,7 +176,7 @@ Cada corrida grava tudo em `--results_dir`. Para `runs/exemplo`:
 
 ---
 
-## Parâmetros — MAPPO
+## Parâmetros - MAPPO
 
 `python -m main.MAPPO.main [opções]`
 
@@ -227,7 +227,7 @@ Cada corrida grava tudo em `--results_dir`. Para `runs/exemplo`:
 
 ---
 
-## Parâmetros — QMIX
+## Parâmetros - QMIX
 
 `python -m main.QMIX.main [opções]`
 
