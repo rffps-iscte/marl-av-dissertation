@@ -332,19 +332,3 @@ generators and, through the per-episode reseeding of the environment, to the sim
 of seed *j* has the same traffic realisation across algorithms and across their paired baselines.
 
 Naming convention: `runs/<algorithm>_<scenario>_<what-changes>_seed<N>`.
-
----
-
-## Citation
-
-If you use this code, please cite the dissertation:
-
-```bibtex
-@mastersthesis{Silva2026,
-  title  = {Multi-Agent Reinforcement Learning for Autonomous Vehicles in SUMO},
-  author = {Silva, Rafael},
-  school = {ISCTE - Instituto Universit\'ario de Lisboa},
-  year   = {2026},
-  url    = {https://github.com/rffps-iscte/marl-av-dissertation}
-}
-```
