@@ -335,12 +335,6 @@ Naming convention: `runs/<algorithm>_<scenario>_<what-changes>_seed<N>`.
 
 ---
 
-## Licence
-
-Released under the MIT Licence. See [LICENSE](LICENSE).
-
----
-
 ## Citation
 
 If you use this code, please cite the dissertation:
